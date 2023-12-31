@@ -1,13 +1,9 @@
 from validation import isfloat
+from iolib import get_input, get_numbers
 
 
 def main():
-    number = input("Enter a number: ")
-    if isfloat(number):
-        print("The number is float.")
-    else:
-        print("The number is not float.")
-
+    print(get_numbers(float, 3))
 
 if __name__ == "__main__":
     main()

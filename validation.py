@@ -12,3 +12,18 @@ def isfloat(input_user: str) -> bool:
         if input_user[0].isnumeric() and input_user[1].isnumeric():
             return True
     return False
+
+def is_arithmetic_operators(char: str) -> bool:
+    """_summary_
+
+    Args:
+        char (str): _description_
+
+    Returns:
+        bool: _description_
+    """
+    operators = ('+', '-', '*', '/', '%', '**', '//')
+    if char in operators:
+        return True
+    else:
+        return False
