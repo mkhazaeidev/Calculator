@@ -27,3 +27,10 @@ def is_arithmetic_operators(char: str) -> bool:
         return True
     else:
         return False
+    
+
+def user_confirm(char: str) -> bool:
+    char = char.lower()
+    if char[0] == 'y':
+        return True
+    return False
