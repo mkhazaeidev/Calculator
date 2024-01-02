@@ -1,9 +1,9 @@
 import messages
 import fixtures
 from validation import user_confirm
-from lib.io import get_input
-from lib.sort import sort_menu_by_order
-from lib.os import clear
+from libs.io import get_input
+from libs.sort import sort_menu_by_order
+from libs.os import clear
 
 
 # import menu and sort it.
