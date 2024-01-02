@@ -32,19 +32,16 @@ def get_numbers(number_type: type, count: int) -> list:
             clear()
             print("You must enter {} \"{}\" numbers".format(count, number_type.__name__))
             if error:
-                print(f"Warning: You did not enter number {
-                    index + 1} correctly. Please try again.")
+                print("Warning: You did not enter number {} correctly. Please try again.".format(index + 1))
                 error = False
-            else:
-                number = input(f"{index + 1}. ")
+            number = input(f"{index + 1}. ")
             try:
                 numbers.append(number_type(number))
-                index += 1
             except:
                 error = True
+            else:
+                index += 1
     else:
-        raise ValueError(f"The type sent is not acceptable. The type must be one of {
-            [item.__name__ for item in acceptable_types]
-            }.")
+        raise ValueError(f"The type sent is not acceptable. The type must be one of {[item.__name__ for item in acceptable_types]}.")
 
     return numbers
