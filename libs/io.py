@@ -1,4 +1,6 @@
+import messages
 from libs.os import clear
+from validation import is_arithmetic_operators
 
 
 def get_input(prompt: str) -> str:
@@ -10,7 +12,7 @@ def get_input(prompt: str) -> str:
     Returns:
         str: Return value from standard input.
     """
-    return input(prompt + ": ").capitalize()
+    return input(prompt.capitalize() + ": ")
 
 
 def get_numbers(number_type: type, count: int) -> list:
@@ -45,3 +47,18 @@ def get_numbers(number_type: type, count: int) -> list:
         raise ValueError(f"The type sent is not acceptable. The type must be one of {[item.__name__ for item in acceptable_types]}.")
 
     return numbers
+
+def get_arithmetic_operators():
+    error_counter = 0
+    operator = ''
+    while True:
+        operator = get_input(messages.get_operators)
+        if is_arithmetic_operators(operator):
+            return operator
+        else:
+            if error_counter < 4:
+                print(messages.get_operators_error)
+                error_counter += 1
+            else:
+                break
+    raise ValueError

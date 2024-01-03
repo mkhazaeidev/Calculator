@@ -13,6 +13,7 @@ def isfloat(input_user: str) -> bool:
             return True
     return False
 
+
 def is_arithmetic_operators(char: str) -> bool:
     """_summary_
 
@@ -27,10 +28,24 @@ def is_arithmetic_operators(char: str) -> bool:
         return True
     else:
         return False
-    
+
 
 def user_confirm(char: str) -> bool:
     char = char.lower()
     if char[0] == 'y':
+        return True
+    return False
+
+
+def come_agian(prompt):
+    char = input(prompt)
+    if char.lower()[0] == 'y':
+        return True
+    return False
+
+
+def check_user_selection(user_selection: str, options_list: list) -> bool:
+    """A function that checks the value entered by the user."""
+    if user_selection in options_list:
         return True
     return False

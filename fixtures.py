@@ -2,7 +2,7 @@ menu_items = {
     "simple_calculator": {
         "name": "Simple Calculator",
         "description": "Simple calculator with two inputs",
-        "order": 3,
+        "order": 1,
     },
     
     "multiple_numbers_calculator": {
