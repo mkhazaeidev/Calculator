@@ -62,3 +62,10 @@ def get_arithmetic_operators():
             else:
                 break
     raise ValueError
+
+
+def get_numbers_inline():
+    numbers = input("Please separate the numbers with a space and then press enter:\n")
+    numbers = numbers.split()
+    numbers = [float(number) for number in numbers if number]
+    return numbers

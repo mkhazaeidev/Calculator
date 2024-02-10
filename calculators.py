@@ -2,7 +2,7 @@ import operator
 
 import messages
 from libs.os import clear
-from libs.io import get_numbers, get_arithmetic_operators
+from libs.io import get_numbers, get_arithmetic_operators, get_numbers_inline
 
 arithmetic_operators = {
     '+': operator.add,
@@ -39,4 +39,13 @@ def simple_calculator():
 
 def multiple_numbers_calculator():
     clear()
-    print("multiple_numbers_calculator")
+    numbers = get_numbers_inline()
+    try:
+        oper = get_arithmetic_operators()
+    except:
+        clear()
+        print(messages.call_function_error)
+    else:
+        result = _mathematical_on_lists(numbers, oper)
+        clear()
+        print("The result is: ", result)
