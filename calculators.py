@@ -16,7 +16,11 @@ arithmetic_operators = {
 
 
 def _mathematical_on_lists(numbers: list, oper: str) -> float:
-    if len(numbers) == 2:
+    if len(numbers) == 0:
+        return 0
+    elif len(numbers) == 1:
+        return numbers[0]
+    elif len(numbers) == 2:
         return arithmetic_operators[oper](numbers[0], numbers[1])
     else:
         last_number = numbers.pop()
