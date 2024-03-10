@@ -3,6 +3,17 @@ from libs.os import clear
 from validation import is_arithmetic_operators
 
 
+def convert_str_list_to_numbers_list(numbers_type: type, numbers: str):
+    if numbers_type in (int,  float, complex):
+        numbers = numbers.split()
+        try:
+            return [numbers_type(number) for number in numbers if number]
+        except:
+            raise ValueError("Some element are not Number.")
+    else:
+        raise TypeError("The type must be in (int, float, complex).")
+
+
 def get_input(prompt: str) -> str:
     """A function to receive input from the user.
 
@@ -65,7 +76,11 @@ def get_arithmetic_operators():
 
 
 def get_numbers_inline():
-    numbers = input("Please separate the numbers with a space and then press enter:\n")
-    numbers = numbers.split()
-    numbers = [float(number) for number in numbers if number]
-    return numbers
+    while True:
+        numbers = input("Please separate the numbers with a space and then press enter:\n")
+        try:
+            return convert_str_list_to_numbers_list(float, numbers)
+        except Exception as e:
+            print(e)
+    
+

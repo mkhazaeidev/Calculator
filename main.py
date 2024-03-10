@@ -57,19 +57,19 @@ def main():
     clear()
     print(messages.program_title)
     char = input(messages.start_the_program)
-    
+
     if user_confirm(char):
         while True:
             clear()
-            
+
             if error:
                 print("Error: ", messages.incorrect_choice)
                 error = False
-                
+
             print(messages.menu_title)
             menu(menu_items)
             user_selection = get_input(messages.select_menu)
-            
+
             if user_selection == 'e':
                 clear()
                 print(messages.end_the_program)
@@ -77,7 +77,7 @@ def main():
             elif check_user_selection(user_selection, options_list):
                 function_name = return_menu_function_name(user_selection, options_list)
                 call_menu_function(function_name)
-                
+
                 if not come_agian(messages.continue_the_program):
                     clear()
                     print(messages.end_the_program)
@@ -92,3 +92,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

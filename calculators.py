@@ -35,7 +35,7 @@ def simple_calculator():
         result = _mathematical_on_lists(numbers, oper)
         clear()
         print("The result is: ", result)
-    
+
 
 def multiple_numbers_calculator():
     clear()
